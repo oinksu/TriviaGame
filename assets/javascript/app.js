@@ -56,3 +56,17 @@ $(document).ready(function () {
     photo: "assets/images/Chavo.jpg"
     }];
     
+    var correctCount = 0;
+    var wrongCount = 0;
+    var unanswerCount = 0;
+    var timer = 20;
+    var intervalId;
+    var userGuess ="";
+    var running = false;
+    var qCount = options.length;
+    var pick;
+    var index;
+    var newArray = [];
+    var holder = [];
+    
+   
