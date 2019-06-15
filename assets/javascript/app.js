@@ -1,4 +1,5 @@
-var options = [
+$(document).ready(function () {
+    var options = [
     {
     question: "Who lives in a barrel?", 
     choice: ["El Chavo", "Doña Florinda", "Don Ramon", "Kiko"],
@@ -10,14 +11,14 @@ var options = [
     question: "His mom always spoils him with a giant ball?", 
     choice: ["La Chilindrina", "Don Ramon", "Kiko", "El Chavo"],
     answer: 2,
-    photo: "assets/images/Kiko.gif"
+    photo: "assets/images/Kiko.jpg"
     },
      
     {
     question: "Who is Don Ramon's child?", 
     choice: ["EL Chavo", "Kiko", "La Chilindrina", "Profesor Jirafales" ],
     answer: 2,
-    photo: "assets/images/Chilindrina.jpg"
+    photo: "assets/images/la_Chilindrina.jpg"
     },
      
     {
@@ -54,3 +55,4 @@ var options = [
     answer: 0,
     photo: "assets/images/Chavo.jpg"
     }];
+    
