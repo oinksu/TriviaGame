@@ -1,7 +1,11 @@
 $(document).ready(function () 
+
+// converted some of the array obgects into "get and set assessors" as suggested by VS code intelisense to test the difference or if it breaks code
+
 {
     
-    var options = [
+    var options = 
+    [
         {
             _question: "Who lives in a barrel?", 
             get question() {
@@ -15,55 +19,73 @@ $(document).ready(function ()
             photo: "assets/images/Chavo.jpg"
         },
     
-    {
-    question: "His mom always spoils him with a giant ball?", 
-    choice: ["La Chilindrina", "Don Ramon", "Kiko", "El Chavo"],
-    answer: 2,
-    photo: "assets/images/Kiko.jpg"
-    },
+        {
+            _question_1: "His mom always spoils him with a giant ball?", 
+            get question() {
+                return this._question_1;
+            },
+            set question(value) {
+                this._question_1 = value;
+            },
+            choice: ["La Chilindrina", "Don Ramon", "Kiko", "El Chavo"],
+            answer: 2,
+            photo: "assets/images/Kiko.jpg"
+        },
      
-    {
-    question: "Who is Don Ramon's child?", 
-    choice: ["EL Chavo", "Kiko", "La Chilindrina", "Profesor Jirafales" ],
-    answer: 2,
-    photo: "assets/images/la_Chilindrina.jpg"
-    },
+        {
+            _question_2: "Who is Don Ramon's child?", 
+            get question() {
+                return this._question_2;
+            },
+            set question(value) {
+                this._question_2 = value;
+            },
+            choice: ["EL Chavo", "Kiko", "La Chilindrina", "Profesor Jirafales" ],
+            answer: 2,
+            photo: "assets/images/la_Chilindrina.jpg"
+        },
      
-    {
-    question: "Who's Doña Florinda's love interest?", 
-    choice: ["Don Ramon", "El Chavo", "Kiko", "Profesor Jirafales" ],
-    answer: 3,
-    photo: "assets/images/Profesor_Jirafales.jpg"
-    },
+        {
+            _question_3: "Who's Doña Florinda's love interest?", 
+            get question() {
+                return this._question_3;
+            },
+            set question(value) {
+                this._question_3 = value;
+            },
+            choice: ["Don Ramon", "El Chavo", "Kiko", "Profesor Jirafales" ],
+            answer: 3,
+            photo: "assets/images/Profesor_Jirafales.jpg"
+        },
      
-    {
-    question: "Who does Don Ramon hide from paying the rent?", 
-    choice: ["Señor Barriga", "Doña Florinda", "Kiko", "Profesor Jirafales" ],
-    answer: 0,
-    photo: "assets/images/Señor_Barriga.jpg"
-    },
+        {
+            question: "Who does Don Ramon hide from paying the rent?", 
+            choice: ["Señor Barriga", "Doña Florinda", "Kiko", "Profesor Jirafales" ],
+            answer: 0,
+            photo: "assets/images/Señor_Barriga.jpg"
+        },
      
-    {
-    question: "Who is always wrongfully accusing and hitting Don Ramon?", 
-    choice: ["Señor Barriga", "Doña Florinda", "Kiko", "Profesor Jirafales" ],
-    answer: 1,
-    photo: "assets/images/Dona_Florinda.jpg"
-    },
+        {
+            question: "Who is always wrongfully accusing and hitting Don Ramon?", 
+            choice: ["Señor Barriga", "Doña Florinda", "Kiko", "Profesor Jirafales" ],
+            answer: 1,
+            photo: "assets/images/Dona_Florinda.jpg"
+        },
      
-    {
-    question: "Who is La Bruja del 71 obsessed with?", 
-    choice: ["El Chavo", "Doña Florinda", "Don Ramon", "Kiko" ],
-    answer: 2,
-    photo: "assets/images/Don_Ramon.jpg"
-    },
+        {
+            question: "Who is La Bruja del 71 obsessed with?", 
+            choice: ["El Chavo", "Doña Florinda", "Don Ramon", "Kiko" ],
+            answer: 2,
+            photo: "assets/images/Don_Ramon.jpg"
+        },
      
-    {
-    question: "Who does el Chapulin Colorado look like?", 
-    choice: ["Kiko", "Doña Florinda", "Don Ramon", "El Chavo" ],
-    answer: 3,
-    photo: "assets/images/Chavo.jpg"
-    
-}];
+        {
+            question: "Who does el Chapulin Colorado look like?", 
+            choice: ["Kiko", "Doña Florinda", "Don Ramon", "El Chavo" ],
+            answer: 3,
+            photo: "assets/images/Chavo.jpg"
+        }
+    ];
     
     var right = 0;
     var wrong = 0;
