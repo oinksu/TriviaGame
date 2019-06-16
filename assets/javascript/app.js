@@ -87,6 +87,7 @@ $(document).ready(function ()
             }
         ];
         
+        //variable city
         var right = 0;
         var wrong = 0;
         var unanswer = 0;
@@ -103,7 +104,6 @@ $(document).ready(function ()
         $("#reset").hide();
         
         //start game button
-        
         $("#start").on("click", function () 
             {
                 $("#start").hide();
@@ -118,7 +118,6 @@ $(document).ready(function ()
         )
         
         //timer start
-    
         function runTimer()
         {
             if (!running) 
@@ -129,14 +128,12 @@ $(document).ready(function ()
         }
         
         //timer countdown
-        
         function decrement() 
         {
             $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
             timer --;
             
             //stops at 0
-        
             if (timer === 0) 
             {
                 unanswer++;
@@ -148,7 +145,6 @@ $(document).ready(function ()
         }
         
         //timer stop
-
         function stop() 
         {
             running = false;
@@ -156,7 +152,6 @@ $(document).ready(function ()
         }
         
         //rando pick
-    
         function displayQuestion() 
         {
         
@@ -168,7 +163,6 @@ $(document).ready(function ()
         
             
             //iterate answers array shows
-            
             $("#questionblock").html("<h2>" + pick.question + "</h2>");
             for(var i = 0; i < pick.choice.length; i++) {
             var userChoice = $("<div>");
@@ -176,14 +170,12 @@ $(document).ready(function ()
             userChoice.html(pick.choice[i]);
             
             //assign array position to check answeres
-
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
         
         }
         
         //click function to select answer and outcomes
-
         $(".answerchoice").on("click", function () 
         {
 
