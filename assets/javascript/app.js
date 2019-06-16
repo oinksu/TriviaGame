@@ -1,7 +1,6 @@
 $(document).ready(function () 
 
-    // converted some of the array obgects into "get and set assessors" as suggested by VS code intelisense to test the difference or if it breaks code
-
+    // converted some obgects i array to "get and set assessors" as suggested by VS code intelisense. testing difference and to see if it breaks code
     {
         
         var options = 
