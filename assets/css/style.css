@@ -71,7 +71,8 @@ h2, h4 {
   bottom: -150px;
 }
 
-#timeleft {
-    border-width: 3px;
-    border-color: black;
+.audio{
+    position: relative;
+    left: 38%;
+    justify-content: center
 }
