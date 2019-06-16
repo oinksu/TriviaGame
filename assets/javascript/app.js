@@ -1,12 +1,19 @@
-$(document).ready(function () {
+$(document).ready(function () 
+{
     
     var options = [
-    {
-    question: "Who lives in a barrel?", 
-    choice: ["El Chavo", "Doña Florinda", "Don Ramon", "Kiko"],
-    answer: 0,
-    photo: "assets/images/Chavo.jpg"
-    },
+        {
+            _question: "Who lives in a barrel?", 
+            get question() {
+                return this._question;
+            },
+            set question(value) {
+                this._question = value;
+            },
+            choice: ["El Chavo", "Doña Florinda", "Don Ramon", "Kiko"],
+            answer: 0,
+            photo: "assets/images/Chavo.jpg"
+        },
     
     {
     question: "His mom always spoils him with a giant ball?", 
@@ -55,13 +62,14 @@ $(document).ready(function () {
     choice: ["Kiko", "Doña Florinda", "Don Ramon", "El Chavo" ],
     answer: 3,
     photo: "assets/images/Chavo.jpg"
-    }];
+    
+}];
     
     var right = 0;
     var wrong = 0;
     var unanswer = 0;
     var running = false;
-    var qCount = options.length;
+    var questionCount = options.length;
     var pick;
     var index;
     var newArray = [];
@@ -72,7 +80,8 @@ $(document).ready(function () {
 
     $("#reset").hide();
     
-    //start button to start game
+    //start game button
+    
     $("#start").on("click", function () {
     $("#start").hide();
     displayQuestion();
@@ -84,6 +93,7 @@ $(document).ready(function () {
     })
     
     //timer start
+   
     function runTimer(){
     if (!running) {
     intervalId = setInterval(decrement, 1000); 
@@ -92,53 +102,68 @@ $(document).ready(function () {
     }
     
     //timer countdown
-    function decrement() {
+    
+    function decrement() 
+    {
     $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
     timer --;
     
-    //stop timer if reach 0
-    if (timer === 0) {
-    unanswer++;
-    stop();
-    $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
-    hidepicture();
+    //stops at 0
+   
+    if (timer === 0) 
+    {
+        unanswer++;
+        stop();
+        $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+        hidepicture();
     }   
+    
     }
     
-    //timer stop
-    function stop() {
-    running = false;
-    clearInterval(intervalId);
+        //timer stop
+    
+        function stop() {
+        running = false;
+        clearInterval(intervalId);
     }
     
     //rando pick
-    function displayQuestion() {
-    
-    //random index in array
-    index = Math.floor(Math.random()*options.length);
-    pick = options[index];
-    
    
+    function displayQuestion() 
+    {
     
-    //iterate answers array shows
-    $("#questionblock").html("<h2>" + pick.question + "</h2>");
-    for(var i = 0; i < pick.choice.length; i++) {
-    var userChoice = $("<div>");
-    userChoice.addClass("answerchoice");
-    userChoice.html(pick.choice[i]);
+        //random index in array
     
-    //assign array position to it so can check answer
-    userChoice.attr("data-guessvalue", i);
-    $("#answerblock").append(userChoice);
-    //      }
+        index = Math.floor(Math.random()*options.length);
+        pick = options[index];
+        
+    
+        
+        //iterate answers array shows
+        
+        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        for(var i = 0; i < pick.choice.length; i++) {
+        var userChoice = $("<div>");
+        userChoice.addClass("answerchoice");
+        userChoice.html(pick.choice[i]);
+        
+        //assign array position to check answeres
+
+        userChoice.attr("data-guessvalue", i);
+        $("#answerblock").append(userChoice);
+    
     }
     
     //click function to select answer and outcomes
+
     $(".answerchoice").on("click", function () {
-    //grab array position from userGuess
+   
+   //grab array position from Guess
+
     userGuess = parseInt($(this).attr("data-guessvalue"));
     
     //correct guess or wrong guess outcomes
+
     if (userGuess === pick.answer) {
     stop();
     right++;
@@ -163,8 +188,9 @@ $(document).ready(function () {
     $("#answerblock").empty();
     timer= 20;
     
-    //run the score screen if all questions answered
-    if ((wrong + right + unanswer) === qCount) {
+    //score screen at all questions answered
+
+    if ((wrong + right + unanswer) === questionCount) {
     $("#questionblock").empty();
     $("#questionblock").html("<h3>Game Over! Here's how you did: </h3>");
     $("#answerblock").append("<h4> Correct: " + right + "</h4>" );
