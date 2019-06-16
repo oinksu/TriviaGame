@@ -12,11 +12,22 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
+    <iframe src="assets\music\chavotheme.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
+    
 
 </head>
 
 <body>
+    
+        <audio id="player" autoplay loop>
+                <source src="assets\music\chavotheme.mp3" type="audio/mp3">
+        </audio>    
+
+
+
 
     <h1>Chavo Del Ocho Trivia Game</h1>
 
@@ -31,13 +42,7 @@
     
     </div>
     
-    <div class= "audio">
-        
-        <audio id="myAudio" controls autoplay loop >
-                <source src="./assets\music\09 - The Elephant Never Forgets.mp3" type="audio/mp3"/>
-        </audio>
-
-    </div>
+    
 
    
 
