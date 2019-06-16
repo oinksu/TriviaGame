@@ -104,15 +104,18 @@ $(document).ready(function ()
     
     //start game button
     
-    $("#start").on("click", function () {
-    $("#start").hide();
-    displayQuestion();
-    runTimer();
-    
-    for(var i = 0; i < options.length; i++) {
-    holder.push(options[i]);
-    }
-    })
+    $("#start").on("click", function () 
+        {
+            $("#start").hide();
+            displayQuestion();
+            runTimer();
+            
+            for(var i = 0; i < options.length; i++) 
+                {
+                    holder.push(options[i]);
+                }
+        }
+    )
     
     //timer start
    
